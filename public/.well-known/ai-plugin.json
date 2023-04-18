@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Weather Forecast",
+  "name_for_model": "weather_forecast",
+  "description_for_human": "Plugin that fetches weather forecast for a city. Submit a city name and receive the weather forecast.",
+  "description_for_model": "Plugin that fetches weather forecast for a city. Submit a city name and receive the weather forecast.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:3000/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "http://localhost:3000/logo.png",
+  "contact_email": "your-email@example.com",
+  "legal_info_url": "http://www.example.com/legal"
+}

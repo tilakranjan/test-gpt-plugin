@@ -1,0 +1,48 @@
+openapi: 3.0.3
+info:
+  title: Weather Forecast API
+  description: A simple API for fetching weather forecast for a city.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+
+paths:
+  /api/weather:
+    post:
+      summary: Get weather forecast for a city
+      operationId: getWeatherForecast
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RequestBody"
+      responses:
+        200:
+          description: The weather forecast for the city
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseBody"
+        400:
+          description: Bad Request
+
+components:
+  schemas:
+    RequestBody:
+      type: object
+      properties:
+        city:
+          type: string
+          description: The name of the city for which the weather forecast is requested.
+      required:
+        - city
+
+    ResponseBody:
+      type: object
+      properties:
+        weather:
+          type: string
+          description: The weather forecast for the requested city.
+
